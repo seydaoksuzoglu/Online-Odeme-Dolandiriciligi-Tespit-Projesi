@@ -98,17 +98,20 @@ Accuracy %100 gibi görünse de, bu yüksek doğruluk oranı çoğunluk sınıf�
 * Yine aynı şekilde veriler eksik durumda. Bunun sebebi model oldukça karmaşık olduğu için sürekli çökme yaşanmasıdır. Aynı şekilde `nrows=30000` yaptığımızda bu çökmelerin önüne geçebildik.
 Doğruluk değerleri iyi görünse de model iyi performans gösteremediği için bu veri seti üzerinde kullanmadım.
 
+**İşte Final Çıktısı:**
+
 **Linear SVC:**
 
 ```
 precision    recall  f1-score   support
 
-           0       1.00      1.00      1.00   1906257
-           1       0.88      0.79      0.83      2529
+           0       1.00      1.00      1.00   1906294
+           1       0.77      0.74      0.75      2492
 
     accuracy                           1.00   1908786
-   macro avg       0.94      0.89      0.92   1908786
+   macro avg       0.88      0.87      0.88   1908786
 weighted avg       1.00      1.00      1.00   1908786
+
 ```
 
 * **Class 0 (Dolandırıcılık olmayan)** sınıfı için, precision, recall ve F1-score %100, yani model bu sınıf için mükemmel şekilde tahmin ediyor.
@@ -125,5 +128,30 @@ weighted avg       1.00      1.00      1.00   1908786
 4. **Düşük Overfitting:** Linear SVC, özellikle yüksek boyutlu veri setlerinde iyi performans gösterir ve overfitting riskini minimize eder.
 
 ## Kullanılan Denetimsiz Öğrenme Modelleri
-- KMeans 
+- KMeans
+- Hierarchical Clustering
+
+KMeans Clustering kullanmayı uygun buldum. İşte sonuçlar:
+
+### Doğruluk Değerleri
+
+**KMeans Clustering:**
+
+```
+Silhouette Score: 0.8002778955314798
+```
+```
+Davies-Bouldin Index: 0.6036441793442805
+```
+```
+Inertia: 2.5654666442324134e+17
+```
+
+Bu sonuçlara bakıldığında kümelerin ayrımı oldukça iyidir ve içsel tutarlıdır. 
+
+## Modelin Amacı
+Modelin amacı **"isFraud"**u yani belirli bir etiketi tahmin etmektir. Bu etiket zaten mevcut olduğu için denetimli öğrenme (supervised learning) kullanmak daha doğru olur.
+Denetimli öğrenme, etiketli veriler üzerinde çalışarak sınıflandırma veya regresyon gibi görevlerde doğru tahminlerde bulunmayı amaçlar. Sonuç olarak burada Linear SVC kullanmak
+KMeans kullanmaktan daha etkili bir sonuç verecektir.
+
 
