@@ -154,4 +154,6 @@ Modelin amacı **"isFraud"**u yani belirli bir etiketi tahmin etmektir. Bu etike
 Denetimli öğrenme, etiketli veriler üzerinde çalışarak sınıflandırma veya regresyon gibi görevlerde doğru tahminlerde bulunmayı amaçlar. Sonuç olarak burada Linear SVC kullanmak
 KMeans kullanmaktan daha etkili bir sonuç verecektir.
 
+# Kaggle Link
+https://www.kaggle.com/code/eydakszolu/online-odeme-dolandiriciligi-tespiti-projesi
 
