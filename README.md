@@ -117,7 +117,12 @@ weighted avg       1.00      1.00      1.00   1908786
 * **Macro Average**, precision %94, recall %89 ve F1-score %92, yani her iki sınıfın performansını dikkate alarak genel başarım iyi düzeyde.
 * **Weighted Average**, Precision, recall ve f1-score %100, çoğunluk sınıfının etkisi altında olan genel performansı yansıtır.
 
-**Peki Neden Linear SCV'yi Seçmeliyiz?
+**Peki Neden Linear SCV'yi Seçmeliyiz?**
+
+1. **Dengeli Performans:** Linear SVC, her iki sınıfı da iyi tahmin etme kapasitesine sahip. Sınıf 0 üzerinde mükemmel sonuçlar verirken, azınlık sınıfı (sınıf 1) için de oldukça iyi performans sergiliyor. Bu, modelin genel dengesini gösterir.
+2. **Hız ve Etkinlik:** Linear SVC, genellikle daha hızlı ve daha az hesaplama gücü gerektirir, bu da büyük veri setleriyle çalışırken avantaj sağlar.
+3. **Yüksek Doğruluk:** Modelin yüksek doğruluk oranı, veri setindeki tahminlerin çoğunun doğru olduğunu gösterir.
+4. **Düşük Overfitting:** Linear SVC, özellikle yüksek boyutlu veri setlerinde iyi performans gösterir ve overfitting riskini minimize eder.
 
 ## Kullanılan Denetimsiz Öğrenme Modelleri
 - KMeans 
